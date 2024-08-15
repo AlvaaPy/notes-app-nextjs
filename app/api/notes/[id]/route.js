@@ -40,7 +40,7 @@ export const DELETE = async (request, { params }) => {
     try {
         const note = await prisma.notesDb.delete({
             where: {
-                id: params.id, // id is already a string
+                id: params.id, 
             },
         });
         return NextResponse.json({ message: 'Note successfully deleted' }, { status: 200 });
@@ -50,31 +50,4 @@ export const DELETE = async (request, { params }) => {
     }
 };
 
-// export async function DELETE(req, { params }) {
-//     const { id } = params;
-//     try {
-//         console.log(`Mencoba menghapus catatan dengan ID: ${id}`);
-
-//         // Periksa apakah catatan ada sebelum menghapusnya
-//         const note = await prisma.notesDb.findUnique({
-//             where: { id },
-//         });
-
-//         if (!note) {
-//             console.log("Catatan tidak ditemukan");
-//             return NextResponse.json({ message: "Catatan tidak ditemukan..." }, { status: 404 });
-//         }
-
-//         // Lakukan penghapusan catatan
-//         await prisma.notesDb.delete({
-//             where: { id },
-//         });
-
-//         console.log("Catatan berhasil dihapus");
-//         return NextResponse.json({ message: "Catatan berhasil dihapus..." }, { status: 204 });
-//     } catch (error) {
-//         console.error("Error saat menghapus catatan:", error.message || error);
-//         return NextResponse.json({ message: "Gagal menghapus catatan..." }, { status: 500 });
-//     }
-// }
 

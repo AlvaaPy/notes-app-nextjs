@@ -77,8 +77,6 @@ export default function Home() {
   }
   };
 
-
-
   const truncate = (str, length) => {
     return str.length > length ? str.slice(0, length) + "..." : str;
   };
@@ -155,8 +153,6 @@ export default function Home() {
           </button>
         </div>
       </div>
-
-      {/* Form Create/Edit Note */}
       <div className={`w-3/4 h-full ${isNightMode ? "bg-gray-900" : "bg-white"}`}>
         <div className="w-full max-w-lg pl-6">
           <div className="mb-4 pt-6 flex flex-col items-start">

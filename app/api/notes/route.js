@@ -22,9 +22,9 @@ export async function POST(req) {
                 body,
             },
         });
-        return NextResponse.json(newNote, { status: 201 });  // Mengembalikan catatan yang baru dibuat
+        return NextResponse.json(newNote, { status: 201 }); 
     } catch (error) {
-        console.error("Gagal membuat catatan:", error); // Tambahkan logging error untuk debugging
+        console.error("Gagal membuat catatan:", error); 
         return NextResponse.error(new Error('Gagal membuat catatan....'));
     }
 }
